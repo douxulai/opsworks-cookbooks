@@ -94,12 +94,12 @@ attribute "apache/keepalive",
 attribute "apache/keepaliverequests",
   :display_name => "Apache Keepalive Requests",
   :description => "Number of requests allowed on a persistent connection",
-  :default => "50"
+  :default => "100"
 
 attribute "apache/keepalivetimeout",
   :display_name => "Apache Keepalive Timeout",
   :description => "Time to wait for requests on persistent connection",
-  :default => "15"
+  :default => "5"
 
 attribute "apache/servertokens",
   :display_name => "Apache Server Tokens",
@@ -124,32 +124,32 @@ attribute "apache/prefork",
 attribute "apache/prefork/startservers",
   :display_name => "Apache Prefork MPM StartServers",
   :description => "Number of MPM servers to start",
-  :default => "2"
+  :default => "16"
 
 attribute "apache/prefork/minspareservers",
   :display_name => "Apache Prefork MPM MinSpareServers",
   :description => "Minimum number of spare server processes",
-  :default => "2"
+  :default => "16"
 
 attribute "apache/prefork/maxspareservers",
   :display_name => "Apache Prefork MPM MaxSpareServers",
   :description => "Maximum number of spare server processes",
-  :default => "8"
+  :default => "32"
 
 attribute "apache/prefork/serverlimit",
   :display_name => "Apache Prefork MPM ServerLimit",
   :description => "Upper limit on configurable server processes",
-  :default => "256"
+  :default => "400"
 
 attribute "apache/prefork/maxclients",
   :display_name => "Apache Prefork MPM MaxClients",
   :description => "Maximum number of simultaneous connections",
-  :default => "64"
+  :default => "400"
 
 attribute "apache/prefork/maxrequestsperchild",
   :display_name => "Apache Prefork MPM MaxRequestsPerChild",
   :description => "Maximum number of request a child process will handle",
-  :default => "256"
+  :default => "10000"
 
 attribute "apache/worker",
   :display_name => "Apache Worker",

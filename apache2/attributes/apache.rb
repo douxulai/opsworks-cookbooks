@@ -87,8 +87,8 @@ default[:apache][:contact] = 'ops@example.com'
 default[:apache][:log_level] = 'info'
 default[:apache][:timeout] = 120
 default[:apache][:keepalive] = 'Off'
-default[:apache][:keepaliverequests] = 50
-default[:apache][:keepalivetimeout] = 15
+default[:apache][:keepaliverequests] = 100
+default[:apache][:keepalivetimeout] = 3
 default[:apache][:deflate_types] = ['application/javascript',
                                     'application/json',
                                     'application/x-javascript',
@@ -107,13 +107,13 @@ default[:apache][:traceenable] = 'Off'
 default[:apache][:hide_info_headers] = true
 
 # Prefork Attributes
-default[:apache][:prefork][:startservers] = 2
-default[:apache][:prefork][:minspareservers] = 2
-default[:apache][:prefork][:maxspareservers] = 8
-default[:apache][:prefork][:serverlimit] = 256
-default[:apache][:prefork][:maxclients] = 64
+default[:apache][:prefork][:startservers] = 16
+default[:apache][:prefork][:minspareservers] = 16
+default[:apache][:prefork][:maxspareservers] = 32
+default[:apache][:prefork][:serverlimit] = 400
+default[:apache][:prefork][:maxclients] = 400
 default[:apache][:prefork][:maxrequestworkers] = 400
-default[:apache][:prefork][:maxrequestsperchild] = 256
+default[:apache][:prefork][:maxrequestsperchild] = 10000
 default[:apache][:prefork][:maxconnectionsperchild] = 10000
 
 # Worker Attributes
